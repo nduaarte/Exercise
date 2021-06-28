@@ -1,8 +1,9 @@
 import React from 'react';
+import { AntDesign } from '@expo/vector-icons';
 
 import welcome from '../../assets/welcome.png';
 
-import { Container, Title, Vector, Description, Button, ButtonIcon } from './styles';
+import { Container, Title, Vector, Description, Button } from './styles';
 
 const Welcome: React.FC = () => {
   return (
@@ -11,14 +12,14 @@ const Welcome: React.FC = () => {
         Treine{'\n'}onde quiser de{'\n'}forma correta
       </Title>
 
-      <Vector source={welcome} />
+      <Vector source={welcome} resizeMode='contain' />
 
       <Description>
-        Você não precisa mais ir à academia. Treinos completos para todas as partes do corpo.
+        Você não precisa mais ir à{'\n'}academia. Treinos completos para{'\n'}todas as partes do corpo.
       </Description>
 
       <Button>
-        <ButtonIcon />
+        <AntDesign name="right" size={20} color="#ffff" />
       </Button>
     </Container>
   );
