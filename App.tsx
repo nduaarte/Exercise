@@ -1,13 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import { useFonts, Jost_600SemiBold, Jost_400Regular, Jost_500Medium } from '@expo-google-fonts/jost';
 
+import { store } from './src/Redux';
 import { Theme } from './src/Styles';
 
-import Welcome from './src/Screens/Welcome'
-import Objective from './src/Screens/Objective'
+import StackRoutes from './src/Routes/Stack.Routes';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -21,9 +22,11 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={Theme} >
-      <StatusBar />
-      <Objective />
-    </ThemeProvider>
+    <Provider store={store} >
+      <ThemeProvider theme={Theme} >
+        <StatusBar />
+        <StackRoutes />
+      </ThemeProvider>
+    </Provider>
   );
 }
