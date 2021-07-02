@@ -6,7 +6,7 @@ import { RadioButton } from 'react-native-paper';
 import { Container, Wrapper, RadioText } from './styles';
 
 interface RadioButtonsProps {
-  objective: string;
+  objective: number;
   setDefine: () => void;
   setloseWeight: () => void;
   setIncrease: () => void;
@@ -28,7 +28,7 @@ const RadioButtons: React.FC<RadioButtonsProps> = ({
         <RadioButton
           value='define'
           color={button}
-          status={objective === 'define' ? 'checked' : 'unchecked'}
+          status={objective === 1 ? 'checked' : 'unchecked'}
         />
         <RadioText>Definir</RadioText>
       </Wrapper>
@@ -37,7 +37,7 @@ const RadioButtons: React.FC<RadioButtonsProps> = ({
         <RadioButton
           value='loseWeight'
           color={button}
-          status={objective === 'loseWeight' ? 'checked' : 'unchecked'}
+          status={objective === 2 ? 'checked' : 'unchecked'}
         />
         <RadioText>Emagrecer</RadioText>
       </Wrapper>
@@ -46,7 +46,7 @@ const RadioButtons: React.FC<RadioButtonsProps> = ({
         <RadioButton
           value='increase'
           color={button}
-          status={objective === 'increase' ? 'checked' : 'unchecked'}
+          status={objective === 3 ? 'checked' : 'unchecked'}
         />
         <RadioText>Crescer</RadioText>
       </Wrapper>
@@ -55,7 +55,7 @@ const RadioButtons: React.FC<RadioButtonsProps> = ({
         <RadioButton
           value='onlyExercise'
           color={button}
-          status={objective === 'onlyExercise' ? 'checked' : 'unchecked'}
+          status={objective === 4 ? 'checked' : 'unchecked'}
         />
         <RadioText>Apenas me exercitar</RadioText>
       </Wrapper>

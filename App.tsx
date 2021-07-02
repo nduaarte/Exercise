@@ -9,6 +9,7 @@ import { store } from './src/Redux';
 import { Theme } from './src/Styles';
 
 import StackRoutes from './src/Routes/Stack.Routes';
+import Screen from './src/Screens/Home';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -25,7 +26,8 @@ export default function App() {
     <Provider store={store} >
       <ThemeProvider theme={Theme} >
         <StatusBar />
-        <StackRoutes />
+        
+        <Screen />
       </ThemeProvider>
     </Provider>
   );

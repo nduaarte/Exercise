@@ -1,14 +1,22 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import image from '../../assets/objective.png';
-import { RootState } from '../../Redux/ObjectiveInfoReducer';
 import ConfirmButton from '../../Components/ConfirmButton';
 import { Container, Title, Vector, Description } from './styles';
 
 const MetaInfo: React.FC = () => {
-  const title = useSelector((state: RootState) => state.ObjectiveInfoReducer.title);
-  const description = useSelector((state: RootState) => state.ObjectiveInfoReducer.description);
+  const [objectiveI, setObjectiveId] = useState<string>();
+
+  useEffect(() => {
+    async function loadStorageObjectiveId() {
+      const ID = await AsyncStorage.getItem('@Moving:objectiveId');
+
+      setObjectiveId(ID || '');
+    }
+  
+    loadStorageObjectiveId();
+  }, []);
 
   return (
     <Container>
