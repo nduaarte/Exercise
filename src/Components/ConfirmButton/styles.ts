@@ -1,20 +1,20 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.TouchableOpacity`
+interface ContainerProps {
+  hasGreen: boolean;
+}
+
+export const Container = styled.TouchableOpacity<ContainerProps>`
   align-items: center;
   justify-content: center;
   width: 232px;
   height: 56px;
   
   border-radius: 16px;
-  background-color: ${({ theme }) =>  theme.button};
+  background-color: ${({ hasGreen }) => hasGreen ? ({ theme }) => theme.button : ({ theme }) => theme.button2};
 `;
 
-interface ButtonProps {
-  color: string;
-}
-
-export const TextButton = styled.Text<ButtonProps>`
+export const TextButton = styled.Text`
   font-family: Jost_600SemiBold;
   font-size: 18px;
   color: ${({ theme }) => theme.white};

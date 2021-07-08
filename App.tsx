@@ -9,7 +9,7 @@ import { store } from './src/Redux';
 import { Theme } from './src/Styles';
 
 import StackRoutes from './src/Routes/Stack.Routes';
-import Screen from './src/Screens/Home';
+import Screen from './src/Screens/BeforeStart';
 
 export default function App() {
   let [fontsLoaded] = useFonts({

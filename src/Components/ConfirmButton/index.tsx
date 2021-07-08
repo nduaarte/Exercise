@@ -8,10 +8,12 @@ interface ButtonCofirmProps extends TouchableOpacityProps {
   color: 'blue' | 'green';
 }
 
-const ConfirmButton: React.FC<ButtonCofirmProps> = ({ text='Confirmar', color, ...rest }) => {
+const ConfirmButton: React.FC<ButtonCofirmProps> = ({ text='Confirmar', color, onPress }) => {
+  const hasGreen = color === 'green' ? true : false;
+
   return(
-    <Container {...rest}>
-      <TextButton color={color}>{text}</TextButton>
+    <Container hasGreen={hasGreen} onPress={onPress}>
+      <TextButton>{text}</TextButton>
     </Container>
   );
 }
